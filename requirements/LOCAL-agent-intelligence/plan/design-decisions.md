@@ -33,6 +33,8 @@ Material design choices that govern the implementation plan. This file is the si
 | DD-004 | Sandbox evidence is a saved VM record, with no agent launcher | DECIDED | Step 4 |
 | DD-005 | The system end-to-end test asserts a submitted rule specification | DECIDED | Step 4 |
 | DD-006 | This node never writes a deployed rule | DECIDED | Step 2 |
+| DD-007 | Human input enters through the orchestrator | DECIDED | Step 2 |
+| DD-008 | Scheduled discovery defaults to 24 hours | DECIDED | Step 5 |
 
 ---
 
@@ -123,7 +125,7 @@ Material design choices that govern the implementation plan. This file is the si
 ## DD-005 — The system end-to-end test asserts a submitted rule specification
 
 - **Status**: DECIDED
-- **Decision**: The planned system test is one path: a human names an assistant; the registry entry and report exist; a hypothesis or unresolved investigation is stored; dataset and sandbox results are loaded from saved records, including the manual VM evidence; the independent evaluator outcome is loaded from a saved record; a submitted rule specification passes only when it contains the research sources and the validation results. The test does not deploy a rule and does not start a shopping agent.
+- **Decision**: The planned system test is one path: a human submits input to the orchestrator; the orchestrator assigns agent intelligence; the registry entry and report exist; a hypothesis or unresolved investigation is stored; dataset and sandbox results are loaded from saved records, including the manual VM evidence; the independent evaluator outcome is loaded from a saved record; a submitted rule specification passes only when it contains the research sources and the validation results. The test does not deploy a rule and does not start a shopping agent.
 - **Scope**: Verification of the pipeline that begins at this agent.
 - **Rationale**: The user asked for that outcome and for an end-to-end test of the system. Planning rules require the scenario to be specified before implementation and allow it to fail until the production path exists.
 - **Evidence**:
@@ -156,6 +158,49 @@ Material design choices that govern the implementation plan. This file is the si
 - **Consequences**:
   - Rule-template layout beyond research sources and validation results belongs to the rule-specification work item.
 - **Affected plan steps**: Step 2
+- **Supersedes**: None
+- **Superseded by**: None
+
+---
+
+## DD-007 — Human input enters through the orchestrator
+
+- **Status**: DECIDED
+- **Decision**: Human input is accepted by the research orchestrator. A named-assistant investigation runs only when that orchestrator assigns it. Scheduled discovery is separate and does not take human input. This node does not expose a direct human entry point.
+- **Scope**: Entry to agent intelligence.
+- **Rationale**: The coordination flow starts at the orchestrator, which assigns tasks. The user confirmed that human input feeds the orchestrator.
+- **Evidence**:
+  - REQ-001, CON-008, REQ-008
+  - `docs/specs/Multi_Agent_Coordination_Capstone.md` sections 1 and 3
+  - User decision 2026-11-19
+- **Alternatives considered**:
+  - **A human calls this node directly** — that bypasses the orchestrator, which assigns work and owns retries.
+- **Consequences**:
+  - A named-assistant investigation waits until an orchestrator assignment exists.
+  - Scheduled discovery does not wait for human input.
+- **Affected plan steps**: Step 2
+- **Supersedes**: None
+- **Superseded by**: None
+
+---
+
+## DD-008 — Scheduled discovery defaults to 24 hours
+
+- **Status**: DECIDED
+- **Decision**: Agent intelligence starts a discovery run when a configured interval since the previous scheduled run has elapsed. The default interval is 24 hours. Each run searches for new agents and AI assistants, and for new observable shopping-session patterns on assistants already in the registry.
+- **Scope**: Scheduled discovery.
+- **Rationale**: The user required a regular discovery run with a configurable cadence and a daily default. The coordination spec calls for continuous monitoring of evolving agent technologies.
+- **Evidence**:
+  - REQ-002, REQ-009, REQ-010
+  - `docs/specs/Multi_Agent_Coordination_Capstone.md` section 6
+  - User decision 2026-11-19
+- **Alternatives considered**:
+  - **Discovery only when a human asks** — that misses new assistants and new patterns between requests.
+  - **A fixed daily clock with no configuration** — the user required the interval to be configurable.
+- **Consequences**:
+  - A pattern that is already stored does not create a second hypothesis.
+  - Changing the interval changes when the next scheduled run starts.
+- **Affected plan steps**: Step 5
 - **Supersedes**: None
 - **Superseded by**: None
 

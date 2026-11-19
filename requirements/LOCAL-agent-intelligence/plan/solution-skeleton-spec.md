@@ -8,20 +8,24 @@ Sources: `requirements/LOCAL-agent-intelligence/` and `requirements/LOCAL-agent-
 
 ## Architecture
 
-This change adds one LangGraph node. A human request or a discovery search enters a LangChain ReAct loop. The loop writes an assistant registry entry, one human-readable report, and either a sourced shopping-session hypothesis or an unresolved investigation. JSON files hold those records after the run ends. The node does not call the later stages and does not start a shopping agent. The system end-to-end test reads those files, a saved virtual-machine evidence record, and saved downstream results, then checks a submitted rule specification for research sources and validation results.
+This change adds one LangGraph node. Human input enters the research orchestrator, which assigns a research task to this node. The node also starts discovery when its configured interval has elapsed. The default interval is 24 hours. Discovery looks for new agents and AI assistants, and for new shopping-session patterns on assistants already in the registry. The ReAct loop writes a registry entry, one human-readable report, and either a sourced hypothesis or an unresolved investigation. JSON files hold those records after the run ends. The node does not call the later stages and does not start a shopping agent. The system end-to-end test reads an orchestrator assignment, those files, a saved virtual-machine evidence record, and saved downstream results, then checks a submitted rule specification for research sources and validation results.
 
 Arrows are runtime flow for this change.
 
 ```mermaid
 flowchart LR
-  human["Human request<br/>Names an assistant or starts discovery<br/>Outside this node"]
+  human["Human input<br/>Names an assistant<br/>Outside this node"]
+  orchestrator["Research orchestrator<br/>Assigns the research task<br/>Outside this node"]
+  cadence["Configured cadence<br/>Default 24 hours<br/>Outside the research loop"]
   research["AgentIntelligenceNode<br/>ReAct research and hypothesis gate<br/>Does not call other agents"]
   registry["AgentRegistry<br/>Entry plus one report<br/>JSON files"]
   hypothesis["HypothesisRecord<br/>Sourced signal or unresolved stop<br/>JSON files"]
   evidence["Saved VM evidence<br/>Manual assistant run<br/>Outside this node"]
   e2e["SystemEndToEndTest<br/>Loads records and checks the submitted spec<br/>Does not start a shopping agent"]
 
-  human --> research
+  human --> orchestrator
+  orchestrator --> research
+  cadence --> research
   research --> registry
   research --> hypothesis
   registry --> e2e
@@ -29,18 +33,17 @@ flowchart LR
   evidence --> e2e
 
   classDef external stroke-dasharray: 4 3
-  class human external
-  class evidence external
+  class human,orchestrator,cadence,evidence external
 ```
 
 ### Building blocks
 
 | Building block | Scope | Boundary | Allowed dependencies |
 |----------------|-------|----------|----------------------|
-| AgentIntelligenceNode | Run ReAct retrieval, apply the hypothesis gate, and choose a registry write | Does not validate datasets, run the sandbox, evaluate evidence, or submit a rule | LangChain tools, AgentRegistry, HypothesisRecord |
+| AgentIntelligenceNode | Run an assigned research task or a scheduled discovery run, apply the hypothesis gate, and choose a registry write | Does not accept human input directly, validate datasets, run the sandbox, evaluate evidence, or submit a rule | Orchestrator assignment, configured interval, LangChain tools, AgentRegistry, HypothesisRecord |
 | AgentRegistry | Store one entry and exactly one report per addition | Does not store hypotheses | JSON research store |
 | HypothesisRecord | Store a sourced hypothesis or an unresolved investigation, and reject duplicates and abuse classification | Does not invent measurements | JSON research store |
-| SystemEndToEndTest | Execute the system path from a human request through a submitted rule specification using saved records | Does not launch Muse or another shopping agent and does not deploy a rule | AgentRegistry, HypothesisRecord, saved VM evidence, saved downstream records |
+| SystemEndToEndTest | Execute the system path from orchestrator-accepted human input through a submitted rule specification using saved records | Does not launch Muse or another shopping agent and does not deploy a rule | Orchestrator assignment, AgentRegistry, HypothesisRecord, saved VM evidence, saved downstream records |
 
 ---
 
@@ -111,6 +114,28 @@ flowchart LR
 | Alternatives considered | Writing a rule file from this node would skip validation and submission. |
 | Consequences | Rule-template fields beyond research sources and validation results belong to the rule-specification work item. |
 | Affected plan steps | Step 2 |
+
+### DD-007 — Human input enters through the orchestrator
+
+| Field | Recorded value |
+|-------|----------------|
+| Status | DECIDED |
+| Rationale | The coordination flow starts at the orchestrator, which assigns tasks. The user confirmed that human input feeds the orchestrator. |
+| Evidence | REQ-001, CON-008, REQ-008, `docs/specs/Multi_Agent_Coordination_Capstone.md` sections 1 and 3, user decision 2026-11-19 |
+| Alternatives considered | A human call directly to this node would bypass the orchestrator. |
+| Consequences | A named-assistant investigation waits for an orchestrator assignment. Scheduled discovery does not wait for human input. |
+| Affected plan steps | Step 2 |
+
+### DD-008 — Scheduled discovery defaults to 24 hours
+
+| Field | Recorded value |
+|-------|----------------|
+| Status | DECIDED |
+| Rationale | The user required a configurable discovery cadence with a daily default, and the coordination spec calls for continuous monitoring. |
+| Evidence | REQ-002, REQ-009, REQ-010, `docs/specs/Multi_Agent_Coordination_Capstone.md` section 6, user decision 2026-11-19 |
+| Alternatives considered | Discovery only on human request would miss new assistants and new patterns. A fixed clock with no configuration would ignore the required setting. |
+| Consequences | A pattern that is already stored does not create a second hypothesis. Changing the interval changes when the next scheduled run starts. |
+| Affected plan steps | Step 5 |
 
 ---
 
