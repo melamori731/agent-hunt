@@ -6,13 +6,13 @@
 
 ### CON-001
 
-- **Statement**: Threat intelligence research uses a ReAct loop and does not use Tree of Thoughts.
+- **Statement**: Agent intelligence research uses a ReAct loop and does not use Tree of Thoughts.
 - **Source**: `docs/specs/Threat_Intelligence_ReAct_Decision.md`
-- **Scope**: Threat-intelligence reasoning
+- **Scope**: Agent-intelligence reasoning
 
 ### CON-002
 
-- **Statement**: The threat-intelligence agent calls tools through LangChain, and its stage is a LangGraph node.
+- **Statement**: The agent-intelligence agent calls tools through LangChain, and its stage is a LangGraph node.
 - **Source**: User decision 2026-11-19 accepting LangChain with LangGraph; `docs/adr/0001-langchain-langgraph.md`
 - **Scope**: This agent's runtime
 
@@ -22,7 +22,7 @@
 
 - **Statement**: The agent does not send messages to other agents; other stages read its stored records.
 - **Source**: `docs/specs/Multi_Agent_Coordination_Capstone.md` section 5; `docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md` opening
-- **Scope**: Threat-intelligence outputs
+- **Scope**: Agent-intelligence outputs
 
 ### CON-004
 
@@ -44,7 +44,7 @@
 
 - **Statement**: A research run has no real-time completion deadline.
 - **Source**: `docs/specs/Multi_Agent_Coordination_Capstone.md` section 6
-- **Scope**: Threat-intelligence runs
+- **Scope**: Agent-intelligence runs
 
 ## Deployment and operational constraints
 

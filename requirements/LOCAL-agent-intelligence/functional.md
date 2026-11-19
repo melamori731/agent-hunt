@@ -10,14 +10,14 @@ Behavior the system must exhibit. Each item must be testable and traceable to a 
 
 #### REQ-001
 
-- **Statement**: When a human names an AI assistant, the threat-intelligence agent retrieves external sources about that assistant and stores one registry entry that cites those sources.
+- **Statement**: When a human names an AI assistant, the agent-intelligence agent retrieves external sources about that assistant and stores one registry entry that cites those sources.
 - **Source**: User decision 2026-11-19; `docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md` section 1 (Threat Intelligence steps 1–3)
 - **Verification**: Submit one named assistant and confirm a new registry entry lists at least one retrieved source for it.
 - **Dependencies**: QR-001, INV-003, POL-003
 
 #### REQ-002
 
-- **Statement**: The threat-intelligence agent searches for AI assistants that are not already in the registry and stores one new registry entry for each assistant it adds.
+- **Statement**: The agent-intelligence agent searches for AI assistants that are not already in the registry and stores one new registry entry for each assistant it adds.
 - **Source**: User decision 2026-11-19
 - **Verification**: Given a fixture source that describes an assistant absent from the registry, run discovery and confirm exactly one new entry for that assistant.
 - **Dependencies**: REQ-003, POL-003

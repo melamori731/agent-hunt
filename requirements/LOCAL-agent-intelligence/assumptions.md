@@ -4,9 +4,9 @@
 
 **Status**: READY_WITH_RISKS
 
-**Work item ID**: LOCAL-threat-intelligence
+**Work item ID**: LOCAL-agent-intelligence
 
-**Base path**: requirements/LOCAL-threat-intelligence/
+**Base path**: requirements/LOCAL-agent-intelligence/
 
 **Generated**: 2026-11-19 08:10 Europe/Dublin
 
@@ -14,7 +14,7 @@
 
 ### Summary
 
-Threat intelligence can be planned. It owns the assistant registry and human-facing addition reports, stores sourced shopping-session hypotheses, and excludes abuse classification. The system end-to-end test is in scope and depends on records from other agents plus a manual virtual-machine run. No blocking question remains.
+Agent intelligence can be planned. It owns the assistant registry and human-facing addition reports, stores sourced shopping-session hypotheses, and excludes abuse classification. The system end-to-end test is in scope and depends on records from other agents plus a manual virtual-machine run. No blocking question remains.
 
 ### Blocking issues
 
@@ -31,7 +31,7 @@ None.
 
 ### ASS-001
 
-- **Statement**: The threat-intelligence agent owns the assistant registry and the addition reports.
+- **Statement**: The agent-intelligence agent owns the assistant registry and the addition reports.
 - **Source**: User decision 2026-11-19, after this role was named as the researcher
 - **Verification**: Registry writes occur only in this agent's stored records.
 - **Risk Level**: safe
@@ -61,7 +61,7 @@ None.
 
 - **Statement**: This agent is a LangGraph node that uses a LangChain ReAct loop and LangChain tools.
 - **Source**: User decision 2026-11-19; `docs/adr/0001-langchain-langgraph.md`
-- **Scope**: Threat-intelligence runtime
+- **Scope**: Agent-intelligence runtime
 - **Risk Level**: safe
 - **Impact if false**: Tool calling and the stage boundary would be rebuilt on another framework.
 
@@ -119,5 +119,5 @@ None.
 
 - **Next stage**: planner
 - **Proceed automatically**: yes
-- **Planner input path**: requirements/LOCAL-threat-intelligence/
+- **Planner input path**: requirements/LOCAL-agent-intelligence/
 - **Reason if paused**: None

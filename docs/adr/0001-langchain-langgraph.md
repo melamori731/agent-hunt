@@ -6,7 +6,7 @@
 
 ## Context
 
-The system is an orchestrated research pipeline that distinguishes AI shopping sessions from human shopping sessions. Specialized roles pass structured records. Execution is mostly sequential, with dataset validation and sandbox validation able to proceed independently, and with retries owned by the orchestrator. Agents do not talk to each other. Threat intelligence uses ReAct and does not use Tree of Thoughts. Each run keeps short-term notes. Hypotheses, validation reports, and rule specifications are versioned records. Tools are web retrieval, dataset access, Python measurement, and sandbox telemetry. A rule is submitted only with research sources and validation results. Unsafe or unsupported work is rejected or escalated.
+The system is an orchestrated research pipeline that distinguishes AI shopping sessions from human shopping sessions. Specialized roles pass structured records. Execution is mostly sequential, with dataset validation and sandbox validation able to proceed independently, and with retries owned by the orchestrator. Agents do not talk to each other. Agent intelligence uses ReAct and does not use Tree of Thoughts. Each run keeps short-term notes. Hypotheses, validation reports, and rule specifications are versioned records. Tools are web retrieval, dataset access, Python measurement, and sandbox telemetry. A rule is submitted only with research sources and validation results. Unsafe or unsupported work is rejected or escalated.
 
 The sandbox for the MVP is a virtual machine hosting one fixed shopping page. Agents such as Muse are run manually on that machine. Automating those runs is out of scope for the MVP.
 
