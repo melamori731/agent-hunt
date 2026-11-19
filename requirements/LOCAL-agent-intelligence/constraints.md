@@ -54,6 +54,12 @@
 - **Source**: User decision 2026-11-19
 - **Scope**: Deliverables of this ticket
 
+### CON-008
+
+- **Statement**: A named-assistant research task reaches this agent only as an orchestrator assignment, and this agent does not take human input directly.
+- **Source**: User decision 2026-11-19; `docs/specs/Multi_Agent_Coordination_Capstone.md` sections 1 and 3
+- **Scope**: Entry to agent intelligence
+
 ---
 
 ## Summary
@@ -64,5 +70,5 @@
 | Architectural            | 2     |
 | Data                     | 1     |
 | Performance              | 1     |
-| Deployment / operational | 1     |
-| **Total**                | **7** |
+| Deployment / operational | 2     |
+| **Total**                | **8** |

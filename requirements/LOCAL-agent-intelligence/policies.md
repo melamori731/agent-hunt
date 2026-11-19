@@ -35,7 +35,7 @@ None.
 
 ### POL-003
 
-- **Statement**: A human-requested registry addition and a discovered registry addition both produce a report with the assistant name, the cited sources, and the entry origin.
+- **Statement**: An orchestrator-assigned registry addition and a scheduled-discovery registry addition both produce a report with the assistant name, the cited sources, and the entry origin.
 - **Source**: User decision 2026-11-19
 - **Verification**: Create one entry of each origin and confirm both reports contain those three items.
 - **Related requirements**: REQ-001, REQ-002, REQ-003

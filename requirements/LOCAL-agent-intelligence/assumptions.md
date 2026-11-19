@@ -105,7 +105,8 @@ None.
 
 | ID | Priority | Why it matters |
 |----|----------|----------------|
-| REQ-001 | critical | A human-named assistant must become a sourced registry entry. |
+| REQ-001 | critical | A human-named assistant reaches this agent only as an orchestrator assignment and must become a sourced registry entry. |
+| REQ-010 | critical | Discovery of new assistants and new patterns runs on a configured cadence that defaults to 24 hours. |
 | REQ-003 | critical | Adding an assistant must be visible to a human. |
 | REQ-004 | critical | A hypothesis without a signal, observation, sources, and measurements cannot be validated. |
 | REQ-008 | critical | The system test is the acceptance check from research through a submitted rule specification. |
