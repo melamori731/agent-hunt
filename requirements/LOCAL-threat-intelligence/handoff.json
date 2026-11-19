@@ -1,0 +1,58 @@
+{
+  "ticketId": "LOCAL-threat-intelligence",
+  "requirementsPath": "requirements/LOCAL-threat-intelligence/",
+  "status": "READY_WITH_RISKS",
+  "requiresHumanInput": false,
+  "blockingIssues": [],
+  "openQuestions": [],
+  "trackedRisks": [
+    "CA-001: the system end-to-end test cannot pass until dataset validation, sandbox records, independent evaluation, and rule specification exist.",
+    "Manual sandbox evidence depends on a person running the assistant on the virtual machine."
+  ],
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "A human-named assistant must become a sourced registry entry."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "Adding an assistant must be visible to a human."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "critical",
+      "reason": "A hypothesis without a signal, observation, sources, and measurements cannot be validated."
+    },
+    {
+      "id": "REQ-008",
+      "priority": "critical",
+      "reason": "The system test is the acceptance check from research through a submitted rule specification."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "A hypothesis with no source must not enter the pipeline."
+    },
+    {
+      "id": "POL-001",
+      "priority": "high",
+      "reason": "Weak sources must stop as an unresolved investigation."
+    },
+    {
+      "id": "POL-004",
+      "priority": "high",
+      "reason": "The end-to-end test must not start a shopping agent."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-003",
+    "REQ-004",
+    "REQ-008",
+    "INV-001"
+  ],
+  "nextAction": "run_planner",
+  "plannerInputPath": "requirements/LOCAL-threat-intelligence/"
+}
