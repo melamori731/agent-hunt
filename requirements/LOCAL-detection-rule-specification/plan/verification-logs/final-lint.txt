@@ -1,0 +1,4 @@
+command: python3 -m ruff check detection_rule_specification tests
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+All checks passed!
