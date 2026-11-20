@@ -1,0 +1,313 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-agent-intelligence",
+  "planPath": "requirements/LOCAL-agent-intelligence/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_hypothesis_record.py"
+      ],
+      "namedTests": [
+        "hypothesisRecord_emptySources_rejected",
+        "HypothesisRecord",
+        "HypothesisRecord",
+        "hypothesisRecord_emptySources_rejected",
+        "HypothesisRecord"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_hypothesis_record.py"
+      ],
+      "namedTests": [
+        "HypothesisRecord",
+        "hypothesisRecord_abuseClassification_rejected",
+        "HypothesisRecord"
+      ]
+    },
+    {
+      "id": "INV-003",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/unit/test_agent_registry.py"
+      ],
+      "namedTests": [
+        "AgentRegistry",
+        "AgentRegistry",
+        "agentRegistry_addition_createsOneReport",
+        "AgentRegistry"
+      ]
+    },
+    {
+      "id": "INV-004",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_agent_intelligence_node.py"
+      ],
+      "namedTests": [
+        "AgentIntelligenceNode",
+        "AgentIntelligenceNode",
+        "agentIntelligenceNode_completedRun_writesNoDeployedRule",
+        "AgentIntelligenceNode"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_hypothesis_record.py"
+      ],
+      "namedTests": [
+        "hypothesisRecord_weakSources_storesUnresolvedOnly",
+        "HypothesisRecord",
+        "hypothesisRecord_weakSources_storesUnresolvedOnly",
+        "HypothesisRecord"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_hypothesis_record.py"
+      ],
+      "namedTests": [
+        "HypothesisRecord",
+        "hypothesisRecord_duplicateSignal_rejected",
+        "HypothesisRecord"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/unit/test_agent_registry.py"
+      ],
+      "namedTests": [
+        "AgentRegistry",
+        "agentRegistry_eitherOrigin_requiresNameSourcesAndOrigin",
+        "AgentRegistry"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "agent_intelligence/system_test.py",
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_system_end_to_end.py"
+      ],
+      "namedTests": [
+        "systemEndToEndTest_run_startsNoShoppingAgent",
+        "SystemEndToEndTest",
+        "SystemEndToEndTest",
+        "systemEndToEndTest_run_startsNoShoppingAgent",
+        "SystemEndToEndTest"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "assignment_namedAssistant_storesSourcedEntry",
+        "hypothesis_completeSignal_storesRequiredFields",
+        "assignment_namedAssistant_storesSourcedEntry",
+        "hypothesis_completeSignal_storesRequiredFields"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "store_processRestart_recordsRemain",
+        "store_processRestart_recordsRemain",
+        "store_processRestart_recordsRemain"
+      ]
+    },
+    {
+      "id": "QR-003",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "system_completeRecords_specificationPasses",
+        "system_completeRecords_specificationPasses"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "assignment_namedAssistant_storesSourcedEntry",
+        "assignment_namedAssistant_storesSourcedEntry",
+        "assignment_namedAssistant_storesSourcedEntry",
+        "assignment_namedAssistant_storesSourcedEntry"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "discovery_unknownAssistant_addsOneEntryAndReport",
+        "discovery_unknownAssistant_addsOneEntryAndReport",
+        "discovery_unknownAssistant_addsOneEntryAndReport"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "discovery_unknownAssistant_addsOneEntryAndReport",
+        "discovery_unknownAssistant_addsOneEntryAndReport",
+        "assignment_namedAssistant_reportNamesOrchestratorOrigin",
+        "assignment_namedAssistant_reportNamesOrchestratorOrigin",
+        "discovery_unknownAssistant_addsOneEntryAndReport",
+        "assignment_namedAssistant_reportNamesOrchestratorOrigin"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py",
+        "tests/unit/test_hypothesis_record.py"
+      ],
+      "namedTests": [
+        "hypothesis_completeSignal_storesRequiredFields",
+        "hypothesis_completeSignal_storesRequiredFields",
+        "hypothesis_completeSignal_storesRequiredFields",
+        "hypothesis_completeSignal_storesRequiredFields"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "hypothesis_abusePurpose_storesNothing",
+        "hypothesis_abusePurpose_storesNothing",
+        "hypothesis_abusePurpose_storesNothing"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "hypothesis_sameSignal_doesNotDuplicate",
+        "hypothesis_sameSignal_doesNotDuplicate",
+        "hypothesis_sameSignal_doesNotDuplicate"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "hypothesis_weakSources_storesUnresolvedOnly",
+        "hypothesis_weakSources_storesUnresolvedOnly",
+        "hypothesis_weakSources_storesUnresolvedOnly"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "system_completeRecords_specificationPasses",
+        "system_completeRecords_specificationPasses",
+        "system_missingValidationResults_specificationFails",
+        "system_completeRecords_specificationPasses",
+        "system_missingValidationResults_specificationFails",
+        "system_completeRecords_specificationPasses",
+        "system_missingValidationResults_specificationFails"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "discovery_knownAssistant_storesNewPattern",
+        "discovery_knownAssistant_storesNewPattern",
+        "discovery_knownAssistant_storesNewPattern"
+      ]
+    },
+    {
+      "id": "REQ-010",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/integration/test_agent_intelligence_scenarios.py"
+      ],
+      "namedTests": [
+        "discovery_defaultInterval_startsAt24Hours",
+        "discovery_defaultInterval_startsAt24Hours",
+        "discovery_oneHourInterval_startsAtOneHour",
+        "discovery_defaultInterval_startsAt24Hours",
+        "discovery_oneHourInterval_startsAtOneHour",
+        "discovery_defaultInterval_startsAt24Hours",
+        "discovery_oneHourInterval_startsAtOneHour"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}

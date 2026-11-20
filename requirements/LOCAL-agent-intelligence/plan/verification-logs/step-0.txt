@@ -1,26 +1,26 @@
 command: python3 -m pytest -v tests/integration
 cwd: /agent/repos/agent-hunt
-exit_code: 2
+exit_code: 0
 ============================= test session starts ==============================
 platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
 cachedir: .pytest_cache
 rootdir: /agent/repos/agent-hunt
 configfile: pyproject.toml
 plugins: langsmith-0.15.1, anyio-4.16.0
-collecting ... collected 0 items / 1 error
+collecting ... collected 13 items
 
-==================================== ERRORS ====================================
-___ ERROR collecting tests/integration/test_agent_intelligence_scenarios.py ____
-ImportError while importing test module '/agent/repos/agent-hunt/tests/integration/test_agent_intelligence_scenarios.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/integration/test_agent_intelligence_scenarios.py:15: in <module>
-    from agent_intelligence import (
-E   ModuleNotFoundError: No module named 'agent_intelligence'
-=========================== short test summary info ============================
-ERROR tests/integration/test_agent_intelligence_scenarios.py
-!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.12s ===============================
+tests/integration/test_agent_intelligence_scenarios.py::assignment_namedAssistant_storesSourcedEntry PASSED [  7%]
+tests/integration/test_agent_intelligence_scenarios.py::discovery_unknownAssistant_addsOneEntryAndReport PASSED [ 15%]
+tests/integration/test_agent_intelligence_scenarios.py::assignment_namedAssistant_reportNamesOrchestratorOrigin PASSED [ 23%]
+tests/integration/test_agent_intelligence_scenarios.py::hypothesis_completeSignal_storesRequiredFields PASSED [ 30%]
+tests/integration/test_agent_intelligence_scenarios.py::hypothesis_abusePurpose_storesNothing PASSED [ 38%]
+tests/integration/test_agent_intelligence_scenarios.py::hypothesis_sameSignal_doesNotDuplicate PASSED [ 46%]
+tests/integration/test_agent_intelligence_scenarios.py::hypothesis_weakSources_storesUnresolvedOnly PASSED [ 53%]
+tests/integration/test_agent_intelligence_scenarios.py::system_completeRecords_specificationPasses PASSED [ 61%]
+tests/integration/test_agent_intelligence_scenarios.py::system_missingValidationResults_specificationFails PASSED [ 69%]
+tests/integration/test_agent_intelligence_scenarios.py::discovery_knownAssistant_storesNewPattern PASSED [ 76%]
+tests/integration/test_agent_intelligence_scenarios.py::discovery_defaultInterval_startsAt24Hours PASSED [ 84%]
+tests/integration/test_agent_intelligence_scenarios.py::discovery_oneHourInterval_startsAtOneHour PASSED [ 92%]
+tests/integration/test_agent_intelligence_scenarios.py::store_processRestart_recordsRemain PASSED [100%]
+
+============================== 13 passed in 0.88s ==============================
