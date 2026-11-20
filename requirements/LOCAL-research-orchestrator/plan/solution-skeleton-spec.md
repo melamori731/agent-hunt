@@ -2,7 +2,7 @@
 
 Solution skeleton spec
 
-Sources: `requirements/LOCAL-research-orchestrator/` and `requirements/LOCAL-research-orchestrator/plan/design-decisions.md`. `requirements/LOCAL-research-orchestrator/plan/plan.md` waits for human approval because this is a greenfield plan.
+Sources: `requirements/LOCAL-research-orchestrator/` and `requirements/LOCAL-research-orchestrator/plan/design-decisions.md`. The written plan is `requirements/LOCAL-research-orchestrator/plan/plan.md`.
 
 ---
 
