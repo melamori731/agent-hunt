@@ -1,0 +1,53 @@
+services:
+  store:
+    build: ./store
+    ports:
+      - "8080:8080"
+    environment:
+      # Browser-facing URL (telemetry.js runs in the host browser).
+      TELEMETRY_URL: http://localhost:8090
+      STORE_PUBLIC_URL: http://localhost:8080
+    depends_on:
+      telemetry:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  telemetry:
+    build: ./telemetry
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./data/sessions:/data/sessions
+    environment:
+      DATA_DIR: /data/sessions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  runner:
+    build: ./runner
+    volumes:
+      - ./scenarios:/app/scenarios:ro
+      - ./fixtures:/app/fixtures:ro
+      - ./data/results:/app/results
+    environment:
+      # Reach published host ports. Works when container-to-container
+      # bridge routing is restricted; also works on Docker Desktop.
+      STORE_URL: http://host.docker.internal:8080
+      TELEMETRY_URL: http://host.docker.internal:8090
+      RESULTS_DIR: /app/results
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      store:
+        condition: service_healthy
+      telemetry:
+        condition: service_healthy
+    profiles:
+      - tools

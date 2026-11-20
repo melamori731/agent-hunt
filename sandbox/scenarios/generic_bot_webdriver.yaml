@@ -1,0 +1,20 @@
+id: generic_bot_webdriver
+hypothesis_id: H-webdriver
+description: >
+  Generic automation marker: navigator.webdriver is true for headless bot sessions.
+profile: generic_bot
+signal:
+  mode: all
+  conditions:
+    - field: webdriver
+      op: eq
+      value: true
+    - field: automation_markers.webdriver
+      op: eq
+      value: true
+reproducibility:
+  positives: 4
+  window: 5
+  max_attempts: 10
+limitations:
+  - Many modern agents set webdriver=false; this signal is a baseline control case.
