@@ -1,0 +1,30 @@
+[project]
+name = "agent-hunt"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain-core>=0.3",
+  "langgraph>=0.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+python_functions = [
+  "assignment_*",
+  "discovery_*",
+  "discoverySchedule_*",
+  "hypothesis_*",
+  "hypothesisRecord_*",
+  "system_*",
+  "systemEndToEndTest_*",
+  "store_*",
+  "agent_*",
+  "agentRegistry_*",
+  "agentIntelligenceNode_*",
+  "jsonResearchStore_*",
+]
+
+[tool.ruff]
+line-length = 100
+src = ["agent_intelligence", "tests"]
