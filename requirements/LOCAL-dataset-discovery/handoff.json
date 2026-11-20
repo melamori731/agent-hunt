@@ -1,0 +1,57 @@
+{
+  "ticketId": "LOCAL-dataset-discovery",
+  "requirementsPath": "requirements/LOCAL-dataset-discovery/",
+  "status": "READY_WITH_RISKS",
+  "requiresHumanInput": false,
+  "blockingIssues": [],
+  "openQuestions": [],
+  "trackedRisks": [
+    "CA-001: sources name age as a suitability check and do not give a day count.",
+    "CA-002: the hypothesis JSON shape is owned by the parallel agent-intelligence ticket."
+  ],
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "A suitable dataset must be stored with the name, source URL, title, suitability, and hypothesis id."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "A query match or an incomplete dataset must not be recorded as suitable."
+    },
+    {
+      "id": "INV-002",
+      "priority": "critical",
+      "reason": "Description match alone must never become a suitable registry entry."
+    },
+    {
+      "id": "POL-001",
+      "priority": "critical",
+      "reason": "Any failed suitability check must record unsuitable."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "high",
+      "reason": "An unsuitable dataset must not be substituted as support for a hypothesis."
+    },
+    {
+      "id": "REQ-006",
+      "priority": "high",
+      "reason": "Human text must not enter this agent."
+    },
+    {
+      "id": "INV-001",
+      "priority": "high",
+      "reason": "A registry entry without identity fields cannot be traced to a hypothesis."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "INV-002",
+    "POL-001"
+  ],
+  "nextAction": "run_planner",
+  "plannerInputPath": "requirements/LOCAL-dataset-discovery/"
+}

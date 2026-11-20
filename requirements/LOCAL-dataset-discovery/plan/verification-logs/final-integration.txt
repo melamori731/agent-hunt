@@ -1,0 +1,24 @@
+command: python3 -m pytest -v tests/test_dataset_discovery_integration.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 11 items
+
+tests/test_dataset_discovery_integration.py::test_suitableDataset_writesEntryForHypothesis PASSED [  9%]
+tests/test_dataset_discovery_integration.py::test_queryOnlyDataset_writesUnsuitable PASSED [ 18%]
+tests/test_dataset_discovery_integration.py::test_repeatDiscovery_keepsOneEntry PASSED [ 27%]
+tests/test_dataset_discovery_integration.py::test_noSuitableCandidate_writesNoSuitableEntry PASSED [ 36%]
+tests/test_dataset_discovery_integration.py::test_scheduleDue_searchesAgain PASSED [ 45%]
+tests/test_dataset_discovery_integration.py::test_scheduleNotDue_skipsSearchWhenSuitableExists PASSED [ 54%]
+tests/test_dataset_discovery_integration.py::test_missingSuitable_searchesBeforeInterval PASSED [ 63%]
+tests/test_dataset_discovery_integration.py::test_humanText_writesNothing PASSED [ 72%]
+tests/test_dataset_discovery_integration.py::test_discoveryRun_startsNoShoppingAgentAndWritesNoRule PASSED [ 81%]
+tests/test_dataset_discovery_integration.py::test_reopenRegistry_returnsSameEntry PASSED [ 90%]
+tests/test_dataset_discovery_integration.py::test_sameCandidate_sameSuitability PASSED [100%]
+
+============================== 11 passed in 0.23s ==============================

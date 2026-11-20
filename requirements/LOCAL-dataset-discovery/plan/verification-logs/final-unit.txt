@@ -1,0 +1,30 @@
+command: python3 -m pytest -v tests/test_suitability_judgement.py tests/test_dataset_registry.py tests/test_hypothesis_reader.py tests/test_discovery_schedule.py tests/test_dataset_discovery_node.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 17 items
+
+tests/test_suitability_judgement.py::test_suitabilityJudgement_queryMatchOnly_isUnsuitable PASSED [  5%]
+tests/test_suitability_judgement.py::test_suitabilityJudgement_missingLabel_isUnsuitable PASSED [ 11%]
+tests/test_suitability_judgement.py::test_suitabilityJudgement_staleVerification_isUnsuitable PASSED [ 17%]
+tests/test_suitability_judgement.py::test_suitabilityJudgement_missingMeasurementField_isUnsuitable PASSED [ 23%]
+tests/test_suitability_judgement.py::test_suitabilityJudgement_completeCandidate_isSuitable PASSED [ 29%]
+tests/test_dataset_registry.py::test_datasetRegistry_missingName_rejected PASSED [ 35%]
+tests/test_dataset_registry.py::test_datasetRegistry_badUrl_rejected PASSED [ 41%]
+tests/test_dataset_registry.py::test_datasetRegistry_repeatPair_keepsOneEntry PASSED [ 47%]
+tests/test_hypothesis_reader.py::test_hypothesisReader_idOrHypothesisId_returnsId PASSED [ 52%]
+tests/test_hypothesis_reader.py::test_hypothesisReader_listMeasurements_returnsFields PASSED [ 58%]
+tests/test_hypothesis_reader.py::test_hypothesisReader_proseMeasurements_returnsNoFields PASSED [ 64%]
+tests/test_discovery_schedule.py::test_discoverySchedule_defaultInterval_notDueAt23Hours PASSED [ 70%]
+tests/test_discovery_schedule.py::test_discoverySchedule_defaultInterval_dueAt24Hours PASSED [ 76%]
+tests/test_discovery_schedule.py::test_discoverySchedule_oneHour_dueAtOneHour PASSED [ 82%]
+tests/test_dataset_discovery_node.py::test_datasetDiscoveryNode_humanText_writesNothing PASSED [ 88%]
+tests/test_dataset_discovery_node.py::test_datasetDiscoveryNode_run_startsNoShoppingAgent PASSED [ 94%]
+tests/test_dataset_discovery_node.py::test_datasetDiscoveryNode_run_writesNoHypothesisOrRule PASSED [100%]
+
+============================== 17 passed in 0.24s ==============================
