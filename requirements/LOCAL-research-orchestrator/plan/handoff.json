@@ -1,0 +1,71 @@
+{
+  "ticketId": "LOCAL-research-orchestrator",
+  "requirementsPath": "requirements/LOCAL-research-orchestrator/",
+  "planPath": "requirements/LOCAL-research-orchestrator/plan/",
+  "designDecisionsPath": "requirements/LOCAL-research-orchestrator/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "The standup interval and rework limit defaults are planning choices, and the validators and rule specification are outside this ticket.",
+  "designRisks": [
+    {
+      "id": "CA-001",
+      "summary": "Dataset validation, sandbox validation, and rule specification are outside this ticket, so assignments are stored and not executed here."
+    },
+    {
+      "id": "CA-002",
+      "summary": "The standup interval defaults to 24 hours and the rework limit defaults to 2 because the sources state no number."
+    }
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": false,
+  "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-research-orchestrator-research-orchestrator/requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md",
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "Human input must become an agent-intelligence assignment and must not be researched here."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "Waiting hypotheses must be assigned to both validators."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "critical",
+      "reason": "One supporting result can request a rule specification only with lower confidence."
+    },
+    {
+      "id": "REQ-007",
+      "priority": "critical",
+      "reason": "The outcome is a submitted specification, not a deployed rule."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "Only the orchestrator may change workflow stage."
+    },
+    {
+      "id": "POL-003",
+      "priority": "high",
+      "reason": "Contradictions and exhausted rework must stop for a human."
+    },
+    {
+      "id": "REQ-008",
+      "priority": "high",
+      "reason": "Rework must be finite."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-003",
+    "REQ-004",
+    "REQ-007",
+    "INV-001"
+  ],
+  "nextAction": "await_skeleton_approval",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-research-orchestrator/plan/plan.md and governed by requirements/LOCAL-research-orchestrator/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": null,
+  "implementationStatus": null,
+  "completionReportPath": null
+}
