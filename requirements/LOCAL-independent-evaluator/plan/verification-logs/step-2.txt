@@ -1,0 +1,11 @@
+command: python3 -m pytest tests/test_independent_evaluator.py -k evaluationRecord --tb=short
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /agent/repos/agent-hunt
+collected 9 items / 6 deselected / 3 selected
+
+tests/test_independent_evaluator.py ...                                  [100%]
+
+======================= 3 passed, 6 deselected in 0.01s ========================
