@@ -1,0 +1,11 @@
+command: python3 -m pytest tests/test_integration_orchestrator.py --tb=short
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /agent/repos/agent-hunt
+collected 11 items
+
+tests/test_integration_orchestrator.py ...........                       [100%]
+
+============================== 11 passed in 0.02s ==============================

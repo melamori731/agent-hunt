@@ -1,0 +1,264 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-research-orchestrator",
+  "planPath": "requirements/LOCAL-research-orchestrator/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "researchOrchestrator_stageChange_namesOrchestrator",
+        "ResearchOrchestrator",
+        "ResearchOrchestrator",
+        "researchOrchestrator_stageChange_namesOrchestrator",
+        "ResearchOrchestrator"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "StageDecision",
+        "StageDecision",
+        "stageDecision_missingTrigger_rejected",
+        "StageDecision"
+      ]
+    },
+    {
+      "id": "INV-003",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "ResearchOrchestrator",
+        "researchOrchestrator_eligibleResult_writesNoDeployedRule",
+        "ResearchOrchestrator"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "StageDecision",
+        "stageDecision_pass_advancesOneStage",
+        "StageDecision"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "StageDecision",
+        "stageDecision_reworkUnderLimit_returnsTask",
+        "StageDecision"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "stageDecision_contradiction_suspends",
+        "StageDecision",
+        "stageDecision_contradiction_suspends",
+        "StageDecision"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "StageDecision",
+        "stageDecision_securityViolation_terminates",
+        "StageDecision"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "standup_waitingHypothesis_assignsBothValidators",
+        "standup_waitingHypothesis_assignsBothValidators"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_orchestrator_store.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "decisions_afterRestart_includeTrigger",
+        "decisions_afterRestart_includeTrigger",
+        "decisions_afterRestart_includeTrigger"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "human_namedAssistant_storesAssignment",
+        "human_namedAssistant_storesAssignment",
+        "human_namedAssistant_storesAssignment",
+        "human_namedAssistant_storesAssignment"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "human_abuseRequest_storesNoAssignment",
+        "human_abuseRequest_storesNoAssignment",
+        "human_abuseRequest_storesNoAssignment"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_standup_schedule.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "standup_waitingHypothesis_assignsBothValidators",
+        "standup_waitingHypothesis_assignsBothValidators",
+        "standup_beforeInterval_assignsNothing",
+        "standup_waitingHypothesis_assignsBothValidators",
+        "standup_beforeInterval_assignsNothing",
+        "standup_waitingHypothesis_assignsBothValidators",
+        "standup_beforeInterval_assignsNothing"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "standup_oneSupport_requestsLowerConfidenceSpec",
+        "standup_oneSupport_requestsLowerConfidenceSpec",
+        "standup_oneSupport_requestsLowerConfidenceSpec",
+        "standup_oneSupport_requestsLowerConfidenceSpec"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "standup_contradiction_returnsInvestigation",
+        "standup_contradiction_returnsInvestigation",
+        "standup_contradiction_returnsInvestigation"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "evaluator_missingResult_doesNotAdvance",
+        "evaluator_pass_advancesOnce",
+        "evaluator_missingResult_doesNotAdvance",
+        "evaluator_pass_advancesOnce",
+        "evaluator_missingResult_doesNotAdvance",
+        "evaluator_pass_advancesOnce"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "standup_eligibleHypothesis_storesSpecNotDeployedRule",
+        "standup_eligibleHypothesis_storesSpecNotDeployedRule",
+        "standup_eligibleHypothesis_storesSpecNotDeployedRule",
+        "standup_eligibleHypothesis_storesSpecNotDeployedRule"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_standup_schedule.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "rework_atLimit_suspendsTask",
+        "rework_atLimit_suspendsTask",
+        "rework_atLimit_suspendsTask",
+        "rework_atLimit_suspendsTask"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}
