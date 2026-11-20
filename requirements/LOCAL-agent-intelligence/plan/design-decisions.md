@@ -11,7 +11,7 @@ Material design choices that govern the implementation plan. This file is the si
 | **Work item ID** | LOCAL-agent-intelligence |
 | **Requirements base path** | requirements/LOCAL-agent-intelligence/ |
 | **Plan base path** | requirements/LOCAL-agent-intelligence/plan/ |
-| **Plan** | [plan.md](./plan.md) (written after human approval) |
+| **Plan** | [plan.md](./plan.md) |
 | **Implementation readiness** | READY_FOR_IMPLEMENTATION_WITH_ACK |
 
 ## Status definitions

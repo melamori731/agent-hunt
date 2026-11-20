@@ -17,7 +17,7 @@
     }
   ],
   "skeletonReviewRequired": true,
-  "skeletonReviewApproved": false,
+  "skeletonReviewApproved": true,
   "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-agent-intelligence-agent-intelligence-and-hypothesis-generation/requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
   "topPriorityItems": [
     {
@@ -69,7 +69,7 @@
     "REQ-010",
     "INV-001"
   ],
-  "nextAction": "await_skeleton_approval",
+  "nextAction": "run_coding_agent",
   "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-agent-intelligence/plan/plan.md and governed by requirements/LOCAL-agent-intelligence/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
   "humanAcknowledgement": null,
   "implementationStatus": null,

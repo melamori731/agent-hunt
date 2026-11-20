@@ -2,7 +2,7 @@
 
 Solution skeleton spec
 
-Sources: `requirements/LOCAL-agent-intelligence/` and `requirements/LOCAL-agent-intelligence/plan/design-decisions.md`. `requirements/LOCAL-agent-intelligence/plan/plan.md` waits for human approval because this is a greenfield plan.
+Sources: `requirements/LOCAL-agent-intelligence/` and `requirements/LOCAL-agent-intelligence/plan/design-decisions.md`. The written plan is `requirements/LOCAL-agent-intelligence/plan/plan.md`.
 
 ---
 
