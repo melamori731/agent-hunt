@@ -1,0 +1,254 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-dataset-validation",
+  "planPath": "requirements/LOCAL-dataset-validation/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_result_record.py",
+        "tests/test_research_orchestrator.py"
+      ],
+      "namedTests": [
+        "datasetResultRecord_unknownResult_rejected",
+        "DatasetResultRecord",
+        "DatasetResultRecord",
+        "datasetResultRecord_unknownResult_rejected",
+        "DatasetResultRecord"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_result_record.py",
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "DatasetResultRecord",
+        "datasetResultRecord_supportWithoutHigherPrevalence_rejected",
+        "DatasetResultRecord"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_result_record.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetResultRecord",
+        "datasetResultRecord_missingFile_recordsBlockedWithNullRates",
+        "DatasetResultRecord"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_result_record.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "datasetResultRecord_rateComparison_selectsResult",
+        "DatasetResultRecord",
+        "datasetResultRecord_rateComparison_selectsResult",
+        "DatasetResultRecord"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_stage_decision.py",
+        "tests/test_dataset_validation_graph.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetValidationGraph",
+        "count_labelled_signal",
+        "DatasetValidationGraph",
+        "datasetValidationGraph_chatPayload_storesNothing",
+        "DatasetValidationGraph"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_stage_decision.py",
+        "tests/test_dataset_validation_graph.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetValidationGraph",
+        "datasetValidationGraph_forbiddenAction_storesNothing",
+        "DatasetValidationGraph"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "signal_moreCommonInAi_recordsSupport",
+        "signal_moreCommonInAi_recordsSupport",
+        "signal_moreCommonInHuman_recordsContradict"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_orchestrator_store.py",
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "store_reopen_readsWrittenResults",
+        "store_reopen_readsWrittenResults",
+        "store_reopen_readsWrittenResults"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "signal_moreCommonInAi_recordsSupport",
+        "signal_moreCommonInAi_recordsSupport",
+        "signal_moreCommonInAi_recordsSupport",
+        "signal_moreCommonInAi_recordsSupport"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "signal_moreCommonInHuman_recordsContradict",
+        "signal_moreCommonInHuman_recordsContradict",
+        "signal_moreCommonInHuman_recordsContradict",
+        "signal_moreCommonInHuman_recordsContradict"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_standup_schedule.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "dataset_equalRates_recordsInconclusive",
+        "dataset_equalRates_recordsInconclusive",
+        "dataset_missingClass_recordsInconclusive",
+        "dataset_equalRates_recordsInconclusive",
+        "dataset_missingClass_recordsInconclusive"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "dataset_missingFile_recordsBlocked",
+        "dataset_missingFile_recordsBlocked",
+        "dataset_missingFile_recordsBlocked",
+        "dataset_missingFile_recordsBlocked"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "assignment_outOfScopeAction_storesNothing",
+        "assignment_outOfScopeAction_storesNothing",
+        "assignment_outOfScopeAction_storesNothing"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "input_notOrchestratorAssignment_storesNothing",
+        "input_notOrchestratorAssignment_storesNothing",
+        "input_notOrchestratorAssignment_storesNothing"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "record_persisted_hasExactlyFiveJsonFields",
+        "record_persisted_hasExactlyFiveJsonFields",
+        "record_persisted_hasExactlyFiveJsonFields",
+        "record_persisted_hasExactlyFiveJsonFields"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}

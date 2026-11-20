@@ -1,0 +1,85 @@
+{
+  "ticketId": "LOCAL-dataset-validation",
+  "requirementsPath": "requirements/LOCAL-dataset-validation/",
+  "planPath": "requirements/LOCAL-dataset-validation/plan/",
+  "designDecisionsPath": "requirements/LOCAL-dataset-validation/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "Support and contradict use a strict comparison of AI prevalence and the human false-positive rate, which the sources do not state as a number, and this package adds a LangGraph node while research_orchestrator does not import LangGraph.",
+  "designRisks": [
+    {
+      "id": "ASS-002",
+      "summary": "Equal class rates store inconclusive because support requires AI prevalence strictly above the human false-positive rate."
+    },
+    {
+      "id": "DR-001",
+      "summary": "research_orchestrator does not import LangGraph. This package follows the ADR and does not import research_orchestrator."
+    }
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": true,
+  "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-dataset-validation-dataset-validation/requirements/LOCAL-dataset-validation/plan/solution-skeleton-spec.md",
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "Support is the outcome that says the signal is present at a measured rate."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "Contradict is the outcome that says the labels refute the signal."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "critical",
+      "reason": "A missing dataset must be blocked rather than filled in."
+    },
+    {
+      "id": "REQ-007",
+      "priority": "critical",
+      "reason": "Downstream readers depend on the five JSON fields."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "A result outside the four allowed values cannot be coordinated."
+    },
+    {
+      "id": "POL-002",
+      "priority": "critical",
+      "reason": "The rate comparison is what makes support, contradict, and inconclusive exclusive."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-004",
+    "REQ-007",
+    "INV-001"
+  ],
+  "nextAction": "run_coding_agent",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-dataset-validation/plan/plan.md and governed by requirements/LOCAL-dataset-validation/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": {
+    "decision": "proceed_as_is",
+    "acknowledgedAt": "2026-11-20T18:25:00Z",
+    "rationale": "User ordered every component implemented in parallel, then an end-to-end test."
+  },
+  "implementationStatus": {
+    "status": "COMPLETE",
+    "updatedAt": "2026-11-20T18:50:00Z",
+    "summary": "Implemented dataset validation and passed final acceptance and the requirement-test coverage gate.",
+    "latestTouchedPaths": [
+      "dataset_validation/counting.py",
+      "dataset_validation/graph.py",
+      "dataset_validation/record.py",
+      "dataset_validation/store.py",
+      "tests/test_dataset_validation_integration.py",
+      "tests/test_dataset_validation_boundary.py",
+      "tests/test_dataset_result_record.py",
+      "tests/test_dataset_result_store.py",
+      "tests/test_dataset_validation_graph.py"
+    ]
+  },
+  "completionReportPath": "requirements/LOCAL-dataset-validation/plan/completion-report.md"
+}
