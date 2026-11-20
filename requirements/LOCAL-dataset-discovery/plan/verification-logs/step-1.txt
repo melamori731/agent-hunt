@@ -1,0 +1,14 @@
+command: python3 -m pytest -v tests/test_dataset_discovery_boundaries.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 1 item
+
+tests/test_dataset_discovery_boundaries.py::test_dataset_discovery_mustNotDependOn_otherAgents PASSED [100%]
+
+============================== 1 passed in 0.19s ===============================
