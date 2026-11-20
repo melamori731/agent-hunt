@@ -1,0 +1,52 @@
+{
+  "ticketId": "LOCAL-independent-evaluator",
+  "requirementsPath": "requirements/LOCAL-independent-evaluator/",
+  "status": "READY_WITH_RISKS",
+  "requiresHumanInput": false,
+  "blockingIssues": [],
+  "openQuestions": [],
+  "trackedRisks": [
+    "ASS-002"
+  ],
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "A hypothesis without sources must not pass."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "A consistent validation pair is the only validation PASS."
+    },
+    {
+      "id": "REQ-005",
+      "priority": "critical",
+      "reason": "A rule passes only when it is submitted, not deployed, and cited."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "Missing hypothesis evidence is REWORK and is not a stage change."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "This package must not write workflow stage changes."
+    },
+    {
+      "id": "POL-003",
+      "priority": "high",
+      "reason": "The rule check is the gate before human review."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-005",
+    "INV-001"
+  ],
+  "nextAction": "run_planner",
+  "plannerInputPath": "requirements/LOCAL-independent-evaluator/"
+}
