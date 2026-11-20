@@ -15,6 +15,22 @@ dev = ["pytest>=8", "ruff>=0.6"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+addopts = "--import-mode=importlib"
+python_functions = [
+  "test_*",
+  "assignment_*",
+  "discovery_*",
+  "discoverySchedule_*",
+  "hypothesis_*",
+  "hypothesisRecord_*",
+  "system_*",
+  "systemEndToEndTest_*",
+  "store_*",
+  "agent_*",
+  "agentRegistry_*",
+  "agentIntelligenceNode_*",
+  "jsonResearchStore_*",
+]
 
 [tool.ruff]
 line-length = 100

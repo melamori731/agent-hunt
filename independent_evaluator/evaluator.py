@@ -102,7 +102,7 @@ class IndependentEvaluator:
             return "REWORK", "rule specification is not submitted"
         if not self._any(row.get("research_sources")):
             return "REWORK", "rule specification lacks research sources"
-        if not self._any(row.get("validation_results")):
+        if not self._validation_results_present(row.get("validation_results")):
             return "REWORK", "rule specification lacks validation results"
         return "PASS", "rule specification is submitted with citations"
 
@@ -124,6 +124,15 @@ class IndependentEvaluator:
             if str(row.get("hypothesis_id")) == str(hypothesis_id):
                 found = row
         return found
+
+    def _validation_results_present(self, value: object) -> bool:
+        if self._any(value):
+            return True
+        if not isinstance(value, dict):
+            return False
+        dataset = str(value.get("dataset_result") or "").strip()
+        sandbox = str(value.get("sandbox_result") or "").strip()
+        return bool(dataset and sandbox)
 
     def _any(self, values: object) -> bool:
         if not isinstance(values, list):
