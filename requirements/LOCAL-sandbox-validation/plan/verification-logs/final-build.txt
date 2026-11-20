@@ -1,0 +1,4 @@
+command: python3 -m compileall sandbox_validation
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+Listing 'sandbox_validation'...
