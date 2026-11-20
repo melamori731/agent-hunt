@@ -1,0 +1,255 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-independent-evaluator",
+  "planPath": "requirements/LOCAL-independent-evaluator/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py"
+      ],
+      "namedTests": [
+        "independentEvaluator_stageFile_unchanged",
+        "IndependentEvaluator",
+        "IndependentEvaluator",
+        "evaluations.json",
+        "independentEvaluator_stageFile_unchanged",
+        "IndependentEvaluator"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "EvaluationRecord",
+        "EvaluationRecord",
+        "evaluationRecord_emptyTrigger_rejected",
+        "EvaluationRecord"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "IndependentEvaluator",
+        "independentEvaluator_emptySources_rework",
+        "IndependentEvaluator"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "IndependentEvaluator",
+        "independentEvaluator_supportAndReject_rework",
+        "IndependentEvaluator"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "independentEvaluator_deployedRule_rework",
+        "IndependentEvaluator",
+        "independentEvaluator_deployedRule_rework",
+        "IndependentEvaluator"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "IndependentEvaluator",
+        "independentEvaluator_abusePurpose_reworkWithoutLabel",
+        "IndependentEvaluator"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "evaluation_afterRestart_remainsReadable",
+        "evaluation_afterRestart_remainsReadable",
+        "evaluation_afterRestart_remainsReadable"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_orchestrator_store.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "evaluation_repeat_sameResult",
+        "evaluation_repeat_sameResult",
+        "evaluation_repeat_sameResult"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "hypothesis_withSources_writesPass",
+        "hypothesis_withSources_writesPass",
+        "hypothesis_withSources_writesPass",
+        "hypothesis_withSources_writesPass"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "hypothesis_missingSources_writesRework",
+        "hypothesis_missingSources_writesRework",
+        "hypothesis_missingSources_writesRework",
+        "hypothesis_missingSources_writesRework"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_standup_schedule.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "validation_consistentPair_writesPass",
+        "validation_consistentPair_writesPass",
+        "validation_consistentPair_writesPass",
+        "validation_consistentPair_writesPass"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "validation_contradictionOrMissing_writesRework",
+        "validation_contradictionOrMissing_writesRework",
+        "validation_contradictionOrMissing_writesRework"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "rule_submittedWithCitations_writesPass",
+        "rule_submittedWithCitations_writesPass",
+        "rule_submittedWithCitations_writesPass",
+        "rule_submittedWithCitations_writesPass"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "rule_notEligible_writesRework",
+        "rule_notEligible_writesRework",
+        "rule_notEligible_writesRework"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_research_orchestrator.py",
+        "tests/test_independent_evaluator_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "evaluator_sideEffects_writesOnlyEvaluation",
+        "evaluator_sideEffects_writesOnlyEvaluation",
+        "evaluator_sideEffects_writesOnlyEvaluation"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}
