@@ -241,15 +241,43 @@ def discovery_oneHourInterval_startsAtOneHour(tmp_path):
 def store_processRestart_recordsRemain(tmp_path):
     """QR-002. Records written by one process remain readable in a new process."""
     writer = """
-import json, sys
+import sys
 from pathlib import Path
 from agent_intelligence import JsonResearchStore
+
 directory = Path(sys.argv[1])
 store = JsonResearchStore(directory)
-store.write_registry_entry({"recordType": "registry_entry", "assistantName": "Muse", "sources": [{"url": "https://example.test/muse", "title": "Muse shopping assistant notes"}]})
-store.write_registry_report({"recordType": "registry_report", "assistantName": "Muse", "sources": [{"url": "https://example.test/muse", "title": "Muse shopping assistant notes"}], "origin": "orchestrator assignment"})
-store.write_hypothesis({"recordType": "hypothesis", "assistantName": "Muse", "signal": "navigator.webdriver is true at checkout", "observation": "The checkout page exposes navigator.webdriver as true.", "sources": [{"url": "https://example.test/muse", "title": "Muse shopping assistant notes"}], "measurements": ["Share of checkout sessions with navigator.webdriver true"]})
-store.write_unresolved_investigation({"recordType": "unresolved_investigation", "assistantName": "Other", "sources": [{"url": "https://example.test/other", "title": "Other notes"}], "reason": "Retrieved sources do not support a testable shopping-session signal."})
+source = {
+    "url": "https://example.test/muse",
+    "title": "Muse shopping assistant notes",
+}
+store.write_registry_entry({
+    "recordType": "registry_entry",
+    "assistantName": "Muse",
+    "sources": [source],
+})
+store.write_registry_report({
+    "recordType": "registry_report",
+    "assistantName": "Muse",
+    "sources": [source],
+    "origin": "orchestrator assignment",
+})
+store.write_hypothesis({
+    "recordType": "hypothesis",
+    "assistantName": "Muse",
+    "signal": "navigator.webdriver is true at checkout",
+    "observation": "The checkout page exposes navigator.webdriver as true.",
+    "sources": [source],
+    "measurements": ["Share of checkout sessions with navigator.webdriver true"],
+})
+store.write_unresolved_investigation({
+    "recordType": "unresolved_investigation",
+    "assistantName": "Other",
+    "sources": [{"url": "https://example.test/other", "title": "Other notes"}],
+    "reason": (
+        "Retrieved sources do not support a testable shopping-session signal."
+    ),
+})
 """
     repo_root = Path(__file__).resolve().parents[2]
     env = os.environ.copy()

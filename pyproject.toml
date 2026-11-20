@@ -28,3 +28,9 @@ python_functions = [
 [tool.ruff]
 line-length = 100
 src = ["agent_intelligence", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["agent_intelligence", "tests"]

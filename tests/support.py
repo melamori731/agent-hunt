@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from agent_intelligence.store import JsonResearchStore
@@ -12,7 +12,7 @@ MUSE_SOURCE = {"url": "https://example.test/muse", "title": "Muse shopping assis
 MUSE_SIGNAL = "navigator.webdriver is true at checkout"
 MUSE_OBSERVATION = "The checkout page exposes navigator.webdriver as true."
 MUSE_MEASUREMENTS = ["Share of checkout sessions with navigator.webdriver true"]
-T0 = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+T0 = datetime(2026, 11, 20, 12, 0, tzinfo=UTC)
 
 
 def source_page(
