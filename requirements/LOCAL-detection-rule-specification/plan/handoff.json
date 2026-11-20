@@ -1,0 +1,80 @@
+{
+  "ticketId": "LOCAL-detection-rule-specification",
+  "requirementsPath": "requirements/LOCAL-detection-rule-specification/",
+  "planPath": "requirements/LOCAL-detection-rule-specification/plan/",
+  "designDecisionsPath": "requirements/LOCAL-detection-rule-specification/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "Input hypothesis and validation file names are a local contract because this package does not import the components that write them.",
+  "designRisks": [
+    "CA-001: hypotheses.json and validation_results.json are the local read contract. Sibling packages are not imported. A different file name from a later writer is outside this ticket until the records use this contract or its id and sources aliases."
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": true,
+  "solutionSkeletonSpecUrl": null,
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "Both supporting results must produce a submitted standard-confidence specification."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "One supporting result with a non-contradicting inconclusive or blocked result must lower confidence."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "A contradiction or a missing source must produce no specification."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "A stored specification is submitted for a human and is not deployed."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "high",
+      "reason": "This component must not research, discover datasets, or execute the sandbox."
+    },
+    {
+      "id": "POL-001",
+      "priority": "high",
+      "reason": "The component must not chat with another agent."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "INV-001"
+  ],
+  "nextAction": "run_coding_agent",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-detection-rule-specification/plan/plan.md and governed by requirements/LOCAL-detection-rule-specification/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": {
+    "decision": "proceed_as_is",
+    "acknowledgedAt": "2026-11-20T18:25:00Z",
+    "rationale": "User ordered every component implemented in parallel, then an end-to-end test."
+  },
+  "implementationStatus": {
+    "status": "COMPLETE",
+    "updatedAt": "2026-11-20T18:50:00Z",
+    "summary": "Implemented the detection rule specification node and passed final acceptance.",
+    "latestTouchedPaths": [
+      "detection_rule_specification/__init__.py",
+      "detection_rule_specification/confidence.py",
+      "detection_rule_specification/specification.py",
+      "detection_rule_specification/store.py",
+      "detection_rule_specification/template.py",
+      "requirements.txt",
+      "tests/test_detection_rule_specification.py",
+      "tests/test_detection_rule_specification_boundary.py",
+      "tests/test_detection_rule_specification_integration.py",
+      "tests/test_evidence_confidence.py",
+      "tests/test_rule_specification_store.py",
+      "tests/test_specification_template.py"
+    ]
+  },
+  "completionReportPath": "requirements/LOCAL-detection-rule-specification/plan/completion-report.md"
+}

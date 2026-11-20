@@ -1,0 +1,15 @@
+command: python3 -m pytest tests/test_specification_template.py tests/test_evidence_confidence.py tests/test_rule_specification_store.py tests/test_detection_rule_specification.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /agent/repos/agent-hunt
+plugins: langsmith-0.15.1, anyio-4.16.0
+collected 12 items
+
+tests/test_specification_template.py ....                                [ 33%]
+tests/test_evidence_confidence.py .....                                  [ 75%]
+tests/test_rule_specification_store.py .                                 [ 83%]
+tests/test_detection_rule_specification.py ..                            [100%]
+
+============================== 12 passed in 0.21s ==============================

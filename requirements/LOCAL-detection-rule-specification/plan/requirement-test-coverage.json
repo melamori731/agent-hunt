@@ -1,0 +1,186 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-detection-rule-specification",
+  "planPath": "requirements/LOCAL-detection-rule-specification/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_specification_template.py",
+        "tests/test_rule_specification_store.py",
+        "tests/test_research_orchestrator.py"
+      ],
+      "namedTests": [
+        "specificationTemplate_deployedTrue_rejected",
+        "SpecificationTemplate",
+        "SpecificationTemplate",
+        "specificationTemplate_deployedTrue_rejected",
+        "SpecificationTemplate"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_specification_template.py",
+        "tests/test_rule_specification_store.py",
+        "tests/test_stage_decision.py"
+      ],
+      "namedTests": [
+        "SpecificationTemplate",
+        "specificationTemplate_abuseField_rejected",
+        "SpecificationTemplate"
+      ]
+    },
+    {
+      "id": "INV-003",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_specification_template.py",
+        "tests/test_rule_specification_store.py",
+        "tests/test_research_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "SpecificationTemplate",
+        "specificationTemplate_missingEvidenceField_rejected",
+        "SpecificationTemplate"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_detection_rule_specification.py",
+        "tests/test_stage_decision.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "detectionRuleSpecification_result_hasNoAgentMessage",
+        "DetectionRuleSpecification",
+        "DetectionRuleSpecification",
+        "detectionRuleSpecification_result_hasNoAgentMessage",
+        "DetectionRuleSpecification"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "specification_repeat_writesEqualRecord",
+        "specification_repeat_writesEqualRecord",
+        "specification_repeat_writesEqualRecord"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_orchestrator_store.py",
+        "tests/test_rule_specification_store.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "ruleSpecificationStore_reopen_returnsWrittenSpecification",
+        "ruleSpecificationStore_reopen_returnsWrittenSpecification"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_evidence_confidence.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "specification_bothSupport_writesStandardConfidence",
+        "EvidenceConfidence",
+        "specification_bothSupport_writesStandardConfidence",
+        "specification_bothSupport_writesStandardConfidence",
+        "specification_bothSupport_writesStandardConfidence"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_evidence_confidence.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "specification_oneSupportOtherInconclusive_writesLowerConfidence",
+        "specification_oneSupportOtherInconclusive_writesLowerConfidence",
+        "specification_oneSupportOtherBlocked_writesLowerConfidence",
+        "specification_oneSupportOtherInconclusive_writesLowerConfidence",
+        "specification_oneSupportOtherBlocked_writesLowerConfidence",
+        "specification_oneSupportOtherInconclusive_writesLowerConfidence",
+        "specification_oneSupportOtherBlocked_writesLowerConfidence"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_standup_schedule.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_evidence_confidence.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "specification_contradiction_writesNothing",
+        "specification_contradiction_writesNothing",
+        "specification_missingSource_writesNothing",
+        "specification_contradiction_writesNothing",
+        "specification_missingSource_writesNothing",
+        "specification_contradiction_writesNothing",
+        "specification_missingSource_writesNothing"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_detection_rule_specification_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "specification_storedInputsOnly_doesNotResearch",
+        "specification_storedInputsOnly_doesNotResearch",
+        "specification_storedInputsOnly_doesNotResearch",
+        "specification_storedInputsOnly_doesNotResearch"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}
