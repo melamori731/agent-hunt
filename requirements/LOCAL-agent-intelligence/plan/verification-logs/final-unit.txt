@@ -1,0 +1,31 @@
+command: python3 -m pytest -v tests/unit
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 18 items
+
+tests/unit/test_agent_intelligence_node.py::agentIntelligenceNode_completedRun_writesNoDeployedRule PASSED [  5%]
+tests/unit/test_agent_intelligence_node.py::agentIntelligenceNode_directHumanText_rejected PASSED [ 11%]
+tests/unit/test_agent_intelligence_node.py::agentIntelligenceNode_assignment_writesRegistryEntry PASSED [ 16%]
+tests/unit/test_agent_registry.py::agentRegistry_addition_createsOneReport PASSED [ 22%]
+tests/unit/test_agent_registry.py::agentRegistry_secondReport_rejected PASSED [ 27%]
+tests/unit/test_agent_registry.py::agentRegistry_eitherOrigin_requiresNameSourcesAndOrigin PASSED [ 33%]
+tests/unit/test_discovery_schedule.py::discoverySchedule_defaultInterval_notDueAt23Hours PASSED [ 38%]
+tests/unit/test_discovery_schedule.py::discoverySchedule_defaultInterval_dueAt24Hours PASSED [ 44%]
+tests/unit/test_discovery_schedule.py::discoverySchedule_oneHour_dueAtOneHour PASSED [ 50%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_emptySources_rejected PASSED [ 55%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_abuseClassification_rejected PASSED [ 61%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_weakSources_storesUnresolvedOnly PASSED [ 66%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_duplicateSignal_rejected PASSED [ 72%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_missingField_rejected PASSED [ 77%]
+tests/unit/test_json_research_store.py::jsonResearchStore_reopen_returnsWrittenRecords PASSED [ 83%]
+tests/unit/test_system_end_to_end.py::systemEndToEndTest_run_startsNoShoppingAgent PASSED [ 88%]
+tests/unit/test_system_end_to_end.py::systemEndToEndTest_missingValidationResults_fails PASSED [ 94%]
+tests/unit/test_system_end_to_end.py::systemEndToEndTest_sameRecords_sameResult PASSED [100%]
+
+============================== 18 passed in 0.24s ==============================
