@@ -1,0 +1,242 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-sandbox-validation",
+  "planPath": "requirements/LOCAL-sandbox-validation/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_sandbox_validation.py",
+        "tests/test_boundary.py",
+        "tests/test_sandbox_validation_boundary.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_signal_reproducibility.py",
+        "docs/specs/Agentic_Threat_Detection_Safety_Intervention_Plan.md",
+        "docs/specs/Multi_Agent_Coordination_Capstone.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Updated(1).md",
+        "docs/specs/shopping_agent_retrieval_checkpoint_polished(1).md",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "sandboxValidation_package_doesNotImportSubprocess",
+        "SandboxValidation",
+        "sandbox_results.json",
+        "SandboxValidation",
+        "subprocess",
+        "run",
+        "sandboxValidation_package_doesNotImportSubprocess",
+        "SandboxValidation"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_sandbox_validation.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_stage_decision.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_signal_reproducibility.py",
+        "docs/specs/Agentic_Threat_Detection_Safety_Intervention_Plan.md",
+        "docs/specs/Multi_Agent_Coordination_Capstone.md",
+        "docs/specs/Capstone Project Option - Research Assistant (1).md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md",
+        "docs/specs/Threat_Intelligence_ReAct_Decision.md",
+        "docs/specs/DOCUMENT_TO_TASK_MAPPING.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Updated(1).md",
+        "docs/specs/Agentic_Commerce_Threat_Researcher_Proposal.md",
+        "docs/specs/shopping_agent_retrieval_checkpoint_polished(1).md",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "SandboxValidation",
+        "hypothesis_id",
+        "result",
+        "evidence_path",
+        "sandboxValidation_resultFile_hasThreeFields",
+        "SandboxValidation"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_orchestrator_store.py",
+        "tests/test_sandbox_validation.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_stage_decision.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_signal_reproducibility.py",
+        "docs/specs/Agentic_Threat_Detection_Safety_Intervention_Plan.md",
+        "docs/specs/Multi_Agent_Coordination_Capstone.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md",
+        "docs/specs/Threat_Intelligence_ReAct_Decision.md",
+        "docs/specs/DOCUMENT_TO_TASK_MAPPING.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Updated(1).md",
+        "docs/specs/Agentic_Commerce_Threat_Researcher_Proposal.md",
+        "docs/specs/shopping_agent_retrieval_checkpoint_polished(1).md",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "signalReproducibility_missingTelemetry_blocked",
+        "SignalReproducibility",
+        "support",
+        "contradict",
+        "inconclusive",
+        "blocked",
+        "SignalReproducibility",
+        "blocked",
+        "signalReproducibility_missingTelemetry_blocked",
+        "SignalReproducibility"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_stage_decision.py",
+        "tests/test_signal_reproducibility.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "signalReproducibility_fourOfFive_support",
+        "SignalReproducibility",
+        "signalReproducibility_fourOfFive_support",
+        "SignalReproducibility"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "validation_sameEvidence_writesSameResult",
+        "validation_sameEvidence_writesSameResult",
+        "validation_sameEvidence_writesSameResult"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "evidence_present_writesResultFile",
+        "evidence_present_writesResultFile",
+        "evidence_present_writesResultFile",
+        "evidence_present_writesResultFile"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_sandbox_validation.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "tests/test_signal_reproducibility.py",
+        "docs/specs/Agentic_Commerce_Agent_Design_Reasoning_Loops.md",
+        "docs/specs/Agentic_Commerce_Agent_Design_Updated(1).md",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "evidence_missing_recordsBlocked",
+        "evidence_missing_recordsBlocked",
+        "evidence_missing_recordsBlocked",
+        "blocked",
+        "evidence_missing_recordsBlocked"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_standup_schedule.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "runs_fourOfFive_support",
+        "runs_fourOfFive_support",
+        "runs_fourOfFive_support"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "runs_noneOfFive_contradict",
+        "runs_noneOfFive_contradict",
+        "runs_noneOfFive_contradict"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_integration_orchestrator.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "runs_mixed_inconclusive",
+        "runs_mixed_inconclusive",
+        "runs_mixed_inconclusive"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_sandbox_validation_integration.py",
+        "tests/test_research_orchestrator.py",
+        "tests/test_integration_orchestrator.py"
+      ],
+      "namedTests": [
+        "result_file_omitsAbuseAndRule",
+        "result_file_omitsAbuseAndRule",
+        "result_file_omitsAbuseAndRule"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}
