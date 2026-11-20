@@ -1,0 +1,56 @@
+{
+  "ticketId": "LOCAL-sandbox-validation",
+  "requirementsPath": "requirements/LOCAL-sandbox-validation/",
+  "planPath": "requirements/LOCAL-sandbox-validation/plan/",
+  "designDecisionsPath": "requirements/LOCAL-sandbox-validation/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "The four-of-five rule is provisional, and the evidence JSON fields are inferred from the reasoning-loop spec.",
+  "designRisks": [
+    {
+      "id": "ASS-002",
+      "summary": "Saved evidence is judged only when runs contain telemetry_present and signal_observed. A differently shaped file is blocked."
+    }
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": true,
+  "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-sandbox-validation-sandbox-validation/requirements/LOCAL-sandbox-validation/plan/solution-skeleton-spec.md",
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "The only output is sandbox_results.json with hypothesis_id, result, and evidence_path."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "Missing evidence is blocked and must not start a browser or shopping agent."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "The package must not import subprocess or start a process."
+    },
+    {
+      "id": "POL-001",
+      "priority": "critical",
+      "reason": "Evidence that cannot be read or has no telemetry is blocked."
+    },
+    {
+      "id": "POL-002",
+      "priority": "high",
+      "reason": "Support, contradict, and inconclusive come from the saved-run rule."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "INV-001",
+    "POL-001"
+  ],
+  "nextAction": "run_coding_agent",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-sandbox-validation/plan/plan.md and governed by requirements/LOCAL-sandbox-validation/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": null,
+  "implementationStatus": null,
+  "completionReportPath": null
+}
