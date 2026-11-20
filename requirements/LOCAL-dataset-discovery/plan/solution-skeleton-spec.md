@@ -2,7 +2,7 @@
 
 Solution skeleton spec
 
-Sources: `requirements/LOCAL-dataset-discovery/` and `requirements/LOCAL-dataset-discovery/plan/design-decisions.md`. `requirements/LOCAL-dataset-discovery/plan/plan.md` is written after explicit approval.
+Sources: `requirements/LOCAL-dataset-discovery/` and `requirements/LOCAL-dataset-discovery/plan/design-decisions.md`. The written plan is `requirements/LOCAL-dataset-discovery/plan/plan.md`.
 
 ---
 

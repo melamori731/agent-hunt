@@ -11,7 +11,7 @@ Material design choices that govern the implementation plan. This file is the si
 | **Work item ID** | LOCAL-dataset-discovery |
 | **Requirements base path** | requirements/LOCAL-dataset-discovery/ |
 | **Plan base path** | requirements/LOCAL-dataset-discovery/plan/ |
-| **Plan** | [plan.md](./plan.md) (written after human approval) |
+| **Plan** | [plan.md](./plan.md) |
 | **Implementation readiness** | READY_FOR_IMPLEMENTATION_WITH_ACK |
 
 ## Status definitions
