@@ -1,0 +1,99 @@
+{
+  "ticketId": "LOCAL-dataset-discovery",
+  "requirementsPath": "requirements/LOCAL-dataset-discovery/",
+  "planPath": "requirements/LOCAL-dataset-discovery/plan/",
+  "designDecisionsPath": "requirements/LOCAL-dataset-discovery/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "The 730-day verification window and the hypothesis JSON field names are planning choices because the sources do not state them.",
+  "designRisks": [
+    {
+      "id": "CA-001",
+      "summary": "The age check has no day count in the sources, so a 730-day window can disagree with a later product number."
+    },
+    {
+      "id": "CA-002",
+      "summary": "Hypothesis field names belong to a parallel ticket, so an unknown id key is skipped and prose measurements cannot show coverage."
+    },
+    {
+      "id": "DR-003",
+      "summary": "The architecture validator has no checks for LangChain plus LangGraph and returned low confidence."
+    }
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": true,
+  "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-dataset-discovery-dataset-discovery/requirements/LOCAL-dataset-discovery/plan/solution-skeleton-spec.md",
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "A suitable dataset must be stored with the name, source URL, title, suitability, and hypothesis id."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "A query match or an incomplete dataset must not be recorded as suitable."
+    },
+    {
+      "id": "INV-002",
+      "priority": "critical",
+      "reason": "Description match alone must never become a suitable registry entry."
+    },
+    {
+      "id": "POL-001",
+      "priority": "critical",
+      "reason": "Any failed suitability check must record unsuitable."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "high",
+      "reason": "An unsuitable dataset must not be substituted as support for a hypothesis."
+    },
+    {
+      "id": "REQ-006",
+      "priority": "high",
+      "reason": "Human text must not enter this agent."
+    },
+    {
+      "id": "INV-001",
+      "priority": "high",
+      "reason": "A registry entry without identity fields cannot be traced to a hypothesis."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "INV-002",
+    "POL-001"
+  ],
+  "nextAction": "run_coding_agent",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-dataset-discovery/plan/plan.md and governed by requirements/LOCAL-dataset-discovery/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": {
+    "decision": "proceed_as_is",
+    "acknowledgedAt": "2026-11-20T18:25:00Z",
+    "rationale": "User ordered every component implemented in parallel, then an end-to-end test."
+  },
+  "implementationStatus": {
+    "status": "COMPLETE",
+    "updatedAt": "2026-11-20T18:50:00Z",
+    "summary": "Implemented dataset discovery and passed the requirement-test coverage gate.",
+    "latestTouchedPaths": [
+      "dataset_discovery/__init__.py",
+      "dataset_discovery/hypothesis_reader.py",
+      "dataset_discovery/suitability.py",
+      "dataset_discovery/registry.py",
+      "dataset_discovery/schedule.py",
+      "dataset_discovery/ranking.py",
+      "dataset_discovery/node.py",
+      "tests/test_dataset_discovery_integration.py",
+      "tests/test_dataset_discovery_boundaries.py",
+      "tests/test_suitability_judgement.py",
+      "tests/test_dataset_registry.py",
+      "tests/test_hypothesis_reader.py",
+      "tests/test_discovery_schedule.py",
+      "tests/test_dataset_discovery_node.py",
+      "pyproject.toml"
+    ]
+  },
+  "completionReportPath": "requirements/LOCAL-dataset-discovery/plan/completion-report.md"
+}

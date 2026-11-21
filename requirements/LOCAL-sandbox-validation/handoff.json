@@ -1,0 +1,46 @@
+{
+  "ticketId": "LOCAL-sandbox-validation",
+  "requirementsPath": "requirements/LOCAL-sandbox-validation/",
+  "status": "READY_WITH_RISKS",
+  "requiresHumanInput": false,
+  "blockingIssues": [],
+  "openQuestions": [],
+  "trackedRisks": [
+    "ASS-002: saved evidence is judged only when it is a JSON object with runs of telemetry_present and signal_observed."
+  ],
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "The only output is sandbox_results.json with hypothesis_id, result, and evidence_path."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "Missing evidence is blocked and must not start a browser or shopping agent."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "The package must not import subprocess or start a process."
+    },
+    {
+      "id": "POL-001",
+      "priority": "critical",
+      "reason": "Evidence that cannot be read or has no telemetry is blocked."
+    },
+    {
+      "id": "POL-002",
+      "priority": "high",
+      "reason": "Support, contradict, and inconclusive come from the saved-run rule."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "INV-001",
+    "POL-001"
+  ],
+  "nextAction": "run_planner",
+  "plannerInputPath": "requirements/LOCAL-sandbox-validation/"
+}

@@ -1,0 +1,12 @@
+command: python3 -m pytest tests/test_evidence_confidence.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /agent/repos/agent-hunt
+plugins: langsmith-0.15.1, anyio-4.16.0
+collected 5 items
+
+tests/test_evidence_confidence.py .....                                  [100%]
+
+============================== 5 passed in 0.19s ===============================

@@ -1,0 +1,81 @@
+{
+  "ticketId": "LOCAL-independent-evaluator",
+  "requirementsPath": "requirements/LOCAL-independent-evaluator/",
+  "planPath": "requirements/LOCAL-independent-evaluator/plan/",
+  "designDecisionsPath": "requirements/LOCAL-independent-evaluator/plan/design-decisions.md",
+  "status": "READY_FOR_IMPLEMENTATION_WITH_ACK",
+  "requiresHumanAck": true,
+  "pauseReason": "Input JSON names are local because this package must not import sibling packages that are implemented in parallel. Records that use different names are REWORK until they match.",
+  "designRisks": [
+    {
+      "id": "DR-001",
+      "summary": "Input JSON names are local because this package must not import sibling packages. A different store shape is REWORK."
+    },
+    {
+      "id": "DR-002",
+      "summary": "The ADR accepts LangChain and LangGraph. Applied modules do not import them, so this package does not register a graph node."
+    }
+  ],
+  "skeletonReviewRequired": true,
+  "skeletonReviewApproved": true,
+  "solutionSkeletonSpecUrl": "https://github.com/melamori731/agent-hunt/blob/LOCAL-independent-evaluator-independent-evaluator/requirements/LOCAL-independent-evaluator/plan/solution-skeleton-spec.md",
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "A hypothesis without sources must not pass."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "A consistent validation pair is the only validation PASS."
+    },
+    {
+      "id": "REQ-005",
+      "priority": "critical",
+      "reason": "A rule passes only when it is submitted, not deployed, and cited."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "Missing hypothesis evidence is REWORK and is not a stage change."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "This package must not write workflow stage changes."
+    },
+    {
+      "id": "POL-003",
+      "priority": "high",
+      "reason": "The rule check is the gate before human review."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-005",
+    "INV-001"
+  ],
+  "nextAction": "run_coding_agent",
+  "codingAgentInstruction": "Build the implementation described in requirements/LOCAL-independent-evaluator/plan/plan.md and governed by requirements/LOCAL-independent-evaluator/plan/design-decisions.md. Go through the plan step by step, apply each step's acceptance criteria and Definition of Done before moving on, stop rather than silently deviating from an active DD-NNN decision, and apply the Final acceptance and Coverage sign-off before considering the work complete.",
+  "humanAcknowledgement": {
+    "decision": "proceed_as_is",
+    "acknowledgedAt": "2026-11-20T18:25:00Z",
+    "rationale": "User ordered every component implemented in parallel, then an end-to-end test."
+  },
+  "implementationStatus": {
+    "status": "COMPLETE",
+    "updatedAt": "2026-11-20T18:39:14Z",
+    "summary": "Implemented all planned steps and passed final acceptance.",
+    "latestTouchedPaths": [
+      "independent_evaluator/__init__.py",
+      "independent_evaluator/evaluator.py",
+      "tests/test_independent_evaluator.py",
+      "tests/test_independent_evaluator_boundary.py",
+      "tests/test_independent_evaluator_integration.py"
+    ]
+  },
+  "completionReportPath": "requirements/LOCAL-independent-evaluator/plan/completion-report.md"
+}

@@ -1,0 +1,18 @@
+command: python3 -m pytest -v tests/unit/test_hypothesis_record.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 5 items
+
+tests/unit/test_hypothesis_record.py::hypothesisRecord_emptySources_rejected PASSED [ 20%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_abuseClassification_rejected PASSED [ 40%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_weakSources_storesUnresolvedOnly PASSED [ 60%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_duplicateSignal_rejected PASSED [ 80%]
+tests/unit/test_hypothesis_record.py::hypothesisRecord_missingField_rejected PASSED [100%]
+
+============================== 5 passed in 0.20s ===============================

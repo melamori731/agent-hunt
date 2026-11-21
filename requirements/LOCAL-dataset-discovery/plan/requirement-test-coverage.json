@@ -1,0 +1,259 @@
+{
+  "passed": true,
+  "requirementsPath": "requirements/LOCAL-dataset-discovery",
+  "planPath": "requirements/LOCAL-dataset-discovery/plan",
+  "items": [
+    {
+      "id": "INV-001",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "tests/test_dataset_registry.py"
+      ],
+      "namedTests": [
+        "datasetRegistry_missingName_rejected",
+        "DatasetRegistry",
+        "datasets.json",
+        "DatasetRegistry",
+        "datasetRegistry_missingName_rejected",
+        "DatasetRegistry"
+      ]
+    },
+    {
+      "id": "INV-002",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_suitability_judgement.py",
+        "tests/test_dataset_discovery_integration.py"
+      ],
+      "namedTests": [
+        "suitabilityJudgement_queryMatchOnly_isUnsuitable",
+        "SuitabilityJudgement",
+        "SuitabilityJudgement",
+        "suitabilityJudgement_queryMatchOnly_isUnsuitable",
+        "SuitabilityJudgement"
+      ]
+    },
+    {
+      "id": "INV-003",
+      "source": "invariants.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetDiscoveryNode",
+        "DatasetDiscoveryNode",
+        "datasetDiscoveryNode_run_startsNoShoppingAgent",
+        "DatasetDiscoveryNode"
+      ]
+    },
+    {
+      "id": "POL-001",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_suitability_judgement.py",
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "suitabilityJudgement_missingLabel_isUnsuitable",
+        "SuitabilityJudgement",
+        "suitabilityJudgement_missingLabel_isUnsuitable",
+        "SuitabilityJudgement"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "tests/test_dataset_registry.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetRegistry",
+        "datasetRegistry_repeatPair_keepsOneEntry",
+        "DatasetRegistry"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetDiscoveryNode",
+        "datasetDiscoveryNode_humanText_writesNothing",
+        "DatasetDiscoveryNode"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "source": "policies.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "DatasetDiscoveryNode",
+        "datasetDiscoveryNode_run_writesNoHypothesisOrRule",
+        "DatasetDiscoveryNode"
+      ]
+    },
+    {
+      "id": "QR-001",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py"
+      ],
+      "namedTests": [
+        "reopenRegistry_returnsSameEntry",
+        "reopenRegistry_returnsSameEntry",
+        "reopenRegistry_returnsSameEntry"
+      ]
+    },
+    {
+      "id": "QR-002",
+      "source": "quality.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "sameCandidate_sameSuitability",
+        "sameCandidate_sameSuitability",
+        "sameCandidate_sameSuitability"
+      ]
+    },
+    {
+      "id": "REQ-001",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "suitableDataset_writesEntryForHypothesis",
+        "suitableDataset_writesEntryForHypothesis",
+        "suitableDataset_writesEntryForHypothesis",
+        "suitableDataset_writesEntryForHypothesis"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "queryOnlyDataset_writesUnsuitable",
+        "queryOnlyDataset_writesUnsuitable",
+        "queryOnlyDataset_writesUnsuitable",
+        "queryOnlyDataset_writesUnsuitable"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "repeatDiscovery_keepsOneEntry",
+        "repeatDiscovery_keepsOneEntry",
+        "repeatDiscovery_keepsOneEntry"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py"
+      ],
+      "namedTests": [
+        "noSuitableCandidate_writesNoSuitableEntry",
+        "noSuitableCandidate_writesNoSuitableEntry",
+        "noSuitableCandidate_writesNoSuitableEntry",
+        "noSuitableCandidate_writesNoSuitableEntry"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-agent-intelligence/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "scheduleDue_searchesAgain",
+        "scheduleDue_searchesAgain",
+        "scheduleNotDue_skipsSearchWhenSuitableExists",
+        "missingSuitable_searchesBeforeInterval",
+        "scheduleDue_searchesAgain",
+        "scheduleNotDue_skipsSearchWhenSuitableExists",
+        "missingSuitable_searchesBeforeInterval"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py"
+      ],
+      "namedTests": [
+        "humanText_writesNothing",
+        "humanText_writesNothing",
+        "humanText_writesNothing",
+        "humanText_writesNothing"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "source": "functional.md",
+      "status": "covered",
+      "tests": [
+        "tests/test_dataset_discovery_node.py",
+        "tests/test_dataset_discovery_integration.py",
+        "requirements/LOCAL-research-orchestrator/plan/solution-skeleton-spec.md"
+      ],
+      "namedTests": [
+        "discoveryRun_startsNoShoppingAgentAndWritesNoRule",
+        "discoveryRun_startsNoShoppingAgentAndWritesNoRule",
+        "discoveryRun_startsNoShoppingAgentAndWritesNoRule"
+      ]
+    }
+  ],
+  "uncovered": [],
+  "contracts": [],
+  "contractTests": [],
+  "contractFailures": [],
+  "errors": []
+}

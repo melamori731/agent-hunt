@@ -1,0 +1,51 @@
+{
+  "ticketId": "LOCAL-detection-rule-specification",
+  "requirementsPath": "requirements/LOCAL-detection-rule-specification/",
+  "status": "READY_WITH_RISKS",
+  "requiresHumanInput": false,
+  "blockingIssues": [],
+  "openQuestions": [],
+  "trackedRisks": [
+    "CA-001: hypothesis and validation file names are a local contract because sibling packages are not imported."
+  ],
+  "topPriorityItems": [
+    {
+      "id": "REQ-001",
+      "priority": "critical",
+      "reason": "Both supporting results must produce a submitted standard-confidence specification."
+    },
+    {
+      "id": "REQ-002",
+      "priority": "critical",
+      "reason": "One supporting result with a non-contradicting inconclusive or blocked result must lower confidence."
+    },
+    {
+      "id": "REQ-003",
+      "priority": "critical",
+      "reason": "A contradiction or a missing source must produce no specification."
+    },
+    {
+      "id": "INV-001",
+      "priority": "critical",
+      "reason": "A stored specification is submitted for a human and is not deployed."
+    },
+    {
+      "id": "REQ-004",
+      "priority": "high",
+      "reason": "This component must not research, discover datasets, or execute the sandbox."
+    },
+    {
+      "id": "POL-001",
+      "priority": "high",
+      "reason": "The component must not chat with another agent."
+    }
+  ],
+  "minimumAcceptedScope": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "INV-001"
+  ],
+  "nextAction": "run_planner",
+  "plannerInputPath": "requirements/LOCAL-detection-rule-specification/"
+}

@@ -1,0 +1,4 @@
+command: python3 -m ruff check sandbox_validation tests/test_sandbox_validation.py tests/test_sandbox_validation_integration.py tests/test_sandbox_validation_boundary.py tests/test_signal_reproducibility.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+All checks passed!

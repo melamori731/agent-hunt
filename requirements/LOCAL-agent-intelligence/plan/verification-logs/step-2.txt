@@ -1,0 +1,16 @@
+command: python3 -m pytest -v tests/unit/test_agent_registry.py
+cwd: /agent/repos/agent-hunt
+exit_code: 0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /agent/repos/agent-hunt
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, anyio-4.16.0
+collecting ... collected 3 items
+
+tests/unit/test_agent_registry.py::agentRegistry_addition_createsOneReport PASSED [ 33%]
+tests/unit/test_agent_registry.py::agentRegistry_secondReport_rejected PASSED [ 66%]
+tests/unit/test_agent_registry.py::agentRegistry_eitherOrigin_requiresNameSourcesAndOrigin PASSED [100%]
+
+============================== 3 passed in 0.19s ===============================
