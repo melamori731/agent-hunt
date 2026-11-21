@@ -1,0 +1,67 @@
+:root {
+  --bg: #e8eef2;
+  --ink: #14202b;
+  --accent: #0b6e6e;
+  --line: #b7c4ce;
+  --card: #f7fafc;
+  --muted: #4a5b6a;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 85% 0%, #cfe3e3 0%, transparent 40%),
+    linear-gradient(180deg, #dce6ec 0%, var(--bg) 55%);
+  min-height: 100vh;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 250, 252, 0.92);
+}
+.brand {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav a {
+  margin-left: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+main { padding: 1.5rem; max-width: 960px; margin: 0 auto; }
+.hero h1 { margin-bottom: 0.25rem; }
+.hero p, footer p, .eyebrow { color: var(--muted); }
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.product, .detail {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+.price, .total { font-weight: 700; }
+button, .cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.lines { list-style: none; padding: 0; }
+.lines li { padding: 0.4rem 0; border-bottom: 1px solid var(--line); }
+.checkout label { display: block; margin: 0.75rem 0; }
+.checkout input { width: min(320px, 100%); padding: 0.4rem; }
+footer { padding: 2rem 1.5rem; }

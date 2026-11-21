@@ -1,0 +1,16 @@
+{
+  "id": "H1",
+  "title": "Muse-like Linux/Chromium + ARM hint + SwiftShader fingerprint",
+  "status": "unvalidated",
+  "signal_summary": "Linux/Chromium UA with ARM architecture client hint and software-rendered WebGL appears more often in Muse-like sessions than in human sessions.",
+  "sandbox_scenario": "muse_fingerprint",
+  "required_telemetry": [
+    "user_agent",
+    "client_hints.architecture",
+    "webgl_renderer",
+    "webdriver"
+  ],
+  "source_notes": [
+    "Derived from docs/specs shopping agent retrieval checkpoint example."
+  ]
+}

@@ -1,0 +1,32 @@
+id: muse_fingerprint
+hypothesis_id: H1
+description: >
+  Combined Linux/Chromium user agent, ARM client-hint architecture, and
+  software-rendered WebGL fingerprint associated with Muse-like sessions.
+profile: muse_like
+signal:
+  mode: all
+  conditions:
+    - field: user_agent
+      op: contains
+      value: "Linux x86_64"
+    - field: user_agent
+      op: contains
+      value: "Chrome/"
+    - field: client_hints.architecture
+      op: eq
+      value: arm
+    - field: webgl_renderer
+      op: regex
+      value: "(?i)swiftshader|angle"
+    - field: webdriver
+      op: eq
+      value: false
+reproducibility:
+  positives: 4
+  window: 5
+  max_attempts: 10
+limitations:
+  - Synthetic Muse-like profile; not live Meta Muse traffic.
+  - Does not measure human false-positive rate.
+  - Browser versions and collection conditions are sandbox-controlled.

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Catalog{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Sandbox Shop</h1>
+  <p>Controlled catalog for reproducing browser and session telemetry signals.</p>
+</section>
+<section class="grid">
+  {% for product in products %}
+  <article class="product">
+    <h2><a href="/products/{{ product.id }}">{{ product.name }}</a></h2>
+    <p class="price">${{ '%.2f'|format(product.price_cents / 100) }}</p>
+    <p>{{ product.description }}</p>
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="product_id" value="{{ product.id }}" />
+      <input type="hidden" name="quantity" value="1" />
+      <button type="submit">Add to cart</button>
+    </form>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

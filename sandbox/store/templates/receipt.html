@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Order {{ order_id }}{% endblock %}
+{% block content %}
+<section>
+  <h1>Order confirmed</h1>
+  <p>Order <code>{{ order_id }}</code> for {{ customer_name }} ({{ email }}).</p>
+  <ul class="lines">
+    {% for item in items %}
+    <li>{{ item.name }} × {{ item.quantity }} — ${{ '%.2f'|format(item.line_total_cents / 100) }}</li>
+    {% endfor %}
+  </ul>
+  <p class="total">Paid: ${{ '%.2f'|format(total_cents / 100) }}</p>
+</section>
+{% endblock %}

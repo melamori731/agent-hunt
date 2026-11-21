@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<section>
+  <h1>Checkout</h1>
+  {% if cart_items %}
+  <p>Total due: ${{ '%.2f'|format(total_cents / 100) }}</p>
+  <form method="post" action="/checkout" class="checkout">
+    <label>Name <input name="name" value="Sandbox Shopper" required /></label>
+    <label>Email <input type="email" name="email" value="shopper@example.com" required /></label>
+    <button type="submit">Place order</button>
+  </form>
+  {% else %}
+  <p>Nothing to check out. <a href="/">Browse catalog</a>.</p>
+  {% endif %}
+</section>
+{% endblock %}

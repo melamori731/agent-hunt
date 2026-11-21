@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+<section>
+  <h1>Cart</h1>
+  {% if cart_items %}
+  <ul class="lines">
+    {% for item in cart_items %}
+    <li>
+      <strong>{{ item.name }}</strong>
+      × {{ item.quantity }}
+      — ${{ '%.2f'|format(item.line_total_cents / 100) }}
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="total">Total: ${{ '%.2f'|format(total_cents / 100) }}</p>
+  <a class="cta" href="/checkout">Checkout</a>
+  {% else %}
+  <p>Cart is empty.</p>
+  {% endif %}
+</section>
+{% endblock %}
